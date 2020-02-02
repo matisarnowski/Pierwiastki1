@@ -13,8 +13,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 public class Main extends Application {
     Scene scene1, scene2;
     Stage window;
@@ -53,7 +51,6 @@ public class Main extends Application {
         Label label1 = new Label("Pierwiastki równania! ");
         GridPane.setConstraints(label1, 0, 0);
 
-
         Button button1 = new Button("Kliknij, aby obliczyć! ");
         GridPane.setConstraints(button1, 0, 1);
         button1.setOnAction(e -> {
@@ -68,7 +65,7 @@ public class Main extends Application {
             Label label2 = new Label("(" + dwumian.getA() + ")x^2 + (" + dwumian.getB() + ") + (" + dwumian.getC() + ")");
 
             VBox box = new VBox(10);
-            scene2 = new Scene(box, 400, 400);
+            scene2 = new Scene(box, 800, 400);
             box.getChildren().addAll(label3, label2);
             box.setAlignment(Pos.CENTER);
             window.setScene(scene2);
@@ -79,11 +76,6 @@ public class Main extends Application {
         grid.getChildren().addAll(label1, labelA, aInput, labelB, bInput, labelC, cInput, button1);
         grid.setAlignment(Pos.CENTER);
         window.setTitle("Obliczamy pierwiastki rzeczywiste równania kwadratowego!");
-
-        /*Label label3 = new Label(dwumian.pierwiastek());
-        VBox box = new VBox(10);
-        scene2 = new Scene(box, 200, 200);
-        box.getChildren().add(label3);*/
 
         window.setScene(scene1);
         window.show();
